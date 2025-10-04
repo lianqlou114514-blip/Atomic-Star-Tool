@@ -1,1 +1,20 @@
-[封号]否[封号]
+// Atomic Star Tool 控制文件
+// 命令格式: 命令类型|参数1|参数2|...
+
+// 获取客户端状态
+GET_STATUS|
+
+// 执行Lua代码
+EXEC_LUA|print("Hello from remote control!")|
+
+// 发送聊天消息
+CHAT_SAY|这是一条远程控制消息|
+
+// 执行控制台命令
+EXEC_CONCMD|connect 127.0.0.1:27015|
+
+// 设置检查间隔
+SET_INTERVAL|10|
+
+// 执行服务器命令
+RUN_SERVER_CMD|sv_gravity|500|
