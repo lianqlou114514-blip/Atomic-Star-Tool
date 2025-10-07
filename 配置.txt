@@ -1,9 +1,21 @@
 [状态]开[状态]
 [版本]1.45[版本]
-[链接]https://pan.jl8.top/down.php/c56a3ee9977c68e9fe142daf52e57836.lua[链接]
-[更新公告]优化:\n1.增加更多的快捷键\n2.优化功能启动速度\n3.优化坐标控制台\n4.增加自定义大力神加速\n5.适配安卓9[更新公告]
-[完成公告]更新成功!重启即可体验[完成公告]
+[链接]https://pan.jl8.top/down.php/0b87b3518eb8572e277e62c84306ae38.lua[链接]
+[更新公告]优化:\n1.优化更新启动速度\n2.优化ui启动速度\n3.修复缺少Ui资源的问题[更新公告]
+[完成公告]正在开始运行[完成公告]
 [日常公告]欢迎使用AT[日常公告]
-[时间戳]2025-10-06 16:00:00[时间戳]
+[时间戳]2025-10-07 23:30:00[时间戳]
 [启动游戏执行脚本]是[启动游戏执行脚本]
-[启动游戏执行的脚本]gg.alert("启动成功", "确定")[启动游戏执行的脚本]
+[启动游戏执行的脚本]local flag = "/sdcard/辉隐过去天天开心/资源"
+if not io.open(flag) then
+    file.checkDir("/sdcard/林默/资源/")
+    file.checkDir("/sdcard/辉隐过去天天开心/")
+    local zip = "/sdcard/林默/资源/林默.zip"
+    if not io.open(zip) then
+        luajava.download("https://pan.jl8.top/down.php/ef220e34b35ed691a4bd8a2144a130fc.zip", zip, "下载中...")
+    end
+    if file.unzip(zip, "/sdcard/林默/资源/") then
+        file.remove(zip)  -- 解压成功后删除ZIP文件
+        file.write(flag, "资源就绪")
+    end
+end[启动游戏执行的脚本]
