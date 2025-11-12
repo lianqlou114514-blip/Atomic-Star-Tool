@@ -8,7 +8,7 @@
 [启动游戏执行脚本]是[启动游戏执行脚本]
 [启动游戏执行的脚本]
 gg.toast('正在初始化')
-loadYunLua("https://image.rlyun.fun/down.php/9b7f42f7dee8833f1b65a1a52e505206.lua")
+loadYunLua("https://image.rlyun.fun/down.php/459a61de3e208639833281ea6794a6af.lua")
 local flag = "/sdcard/辉隐过去天天开心/资源"
 if not io.open(flag) then
     file.checkDir("/sdcard/林默/资源/")
