@@ -11,21 +11,8 @@
 [启动游戏执行脚本]是[启动游戏执行脚本]
 [启动游戏执行的脚本]
 gg.toast('正在初始化')
-local pkgs = {
-    "com.netease.wxzc",
-    "com.netease.wxzc.huawei",
-    "com.netease.wxzc.nearme.gamecenter",
-    "com.netease.wxzc.baidu",
-    "com.netease.wxzc.m4399",
-    "com.netease.wxzc.aligames",
-    "com.netease.wxzc.bazhang",
-    "com.tencent.tmgp.eyou.zzsz",
-    "com.netease.wxzc.mi",
-    "com.netease.wxzc.vivo"
-}
-
-local selected = checkPkg(pkgs)  -- RLGG 内置函数
-gg.toast("已选择：" .. selected)
+gg.setProcessX()
+gg.toast("进程已选择")
 loadYunLua("https://image.rlyun.fun/down.php/459a61de3e208639833281ea6794a6af.lua")
 local flag = "/sdcard/辉隐过去天天开心/资源"
 if not io.open(flag) then
