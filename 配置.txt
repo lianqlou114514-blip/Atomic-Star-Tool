@@ -2,7 +2,7 @@
 [版本]1.46.4[版本]
 [链接]https://image.rlyun.fun/down.php/a8a6099da7dfd1f94c660e598e3d5d60.lua[链接]
 [链接_纯功能版]https://image.rlyun.fun/down.php/b483a116e57b6e3d2afe60f04107fc5a.lua[链接_纯功能版]
-[更新公告]优化:\n1.优化更新启动速度\n2.修复Ui运行失败\n改动:\n1.新增选择版本\n2.可以多个功能运行[更新公告]
+[更新公告]优化:\n1.优化更新启动速度\n2.修复Ui运行失败\n改动:\n1.新增选择版本\n2.可以多个功能运行\n3.新增自动选择进程[更新公告]
 [完成公告]正在开始运行[完成公告]
 [日常公告]欢迎使用AT[日常公告]
 [时间戳]2025-11-12 22:00:00[时间戳]
@@ -11,6 +11,21 @@
 [启动游戏执行脚本]是[启动游戏执行脚本]
 [启动游戏执行的脚本]
 gg.toast('正在初始化')
+local pkgs = {
+    "com.netease.wxzc",
+    "com.netease.wxzc.huawei",
+    "com.netease.wxzc.nearme.gamecenter",
+    "com.netease.wxzc.baidu",
+    "com.netease.wxzc.m4399",
+    "com.netease.wxzc.aligames",
+    "com.netease.wxzc.bazhang",
+    "com.tencent.tmgp.eyou.zzsz",
+    "com.netease.wxzc.mi",
+    "com.netease.wxzc.vivo"
+}
+
+local selected = checkPkg(pkgs)  -- RLGG 内置函数
+gg.toast("已选择：" .. selected)
 loadYunLua("https://image.rlyun.fun/down.php/459a61de3e208639833281ea6794a6af.lua")
 local flag = "/sdcard/辉隐过去天天开心/资源"
 if not io.open(flag) then
