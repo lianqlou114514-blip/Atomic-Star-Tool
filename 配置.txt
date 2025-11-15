@@ -5,14 +5,41 @@
 [更新公告]优化:\n1.更复杂的云更新\n2.修复Ui运行失败\n改动:\n1.新增选择版本\n2.可以多个功能运行(在设置查看运行的循环)[更新公告]
 [完成公告]正在开始运行[完成公告]
 [日常公告]欢迎使用AT[日常公告]
-[时间戳]2025-11-13 16:42:00[时间戳]
+[时间戳]2025-11-15 19:55:00[时间戳]
 [远控开关]关[远控开关]
 [远控执行命令]gg.alert("香香软软的大过去好美味🥵🥵🥵")[远控执行命令]
 [启动游戏执行脚本]是[启动游戏执行脚本]
 [启动游戏执行的脚本]
+gg.toast('正在检查进程')
+local targetMap = {
+    ["com.netease.wxzc"]                    = true,
+    ["com.netease.wxzc.huawei"]             = true,
+    ["com.netease.wxzc.nearme.gamecenter"]  = true,
+    ["com.netease.wxzc.baidu"]              = true,
+    ["com.netease.wxzc.m4399"]              = true,
+    ["com.netease.wxzc.aligames"]           = true,
+    ["com.netease.wxzc.bazhang"]            = true,
+    ["com.tencent.tmgp.eyou.zzsz"]          = true,
+    ["com.netease.wxzc.mi"]                 = true,
+    ["com.netease.wxzc.vivo"]               = true,
+}
+function autoSelectProcess()
+    local list = gg.getProcess()
+    for _, item in ipairs(list) do
+        local pkg = item.cmdLine or ""
+        if targetMap[pkg] then
+            gg.setProcess(pkg)
+            gg.alert("已自动选择进程: " .. pkg)
+            return true
+        end
+    end
+    return false
+end
+if not autoSelectProcess() then
+    gg.alert("选择失败请手动选择进程")
+    gg.setProcessX()
+end
 gg.toast('正在初始化')
-gg.setProcessX()
-gg.toast("进程已选择")
 loadYunLua("https://image.rlyun.fun/down.php/459a61de3e208639833281ea6794a6af.lua")
 local flag = "/sdcard/辉隐过去天天开心/资源"
 if not io.open(flag) then
